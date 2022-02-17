@@ -9,7 +9,7 @@ Projeto de desenvolvimento front-end de um simulador financeiro.
 
 ## Stack utilizada
 
-**Front-end:** HTML e Css
+**Front-end:** HTML e CSS
 
 **Back-end:** Node, Express
 
