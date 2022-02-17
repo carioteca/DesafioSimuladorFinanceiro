@@ -91,16 +91,18 @@
        
        //Função Validar o campo prazo
        var prazo = document.getElementsByClassName("prazo")[0].value;
-       var erro = document.getElementsByTagName('label')[3].innerHTML
+
         function validaCampo(){
             //Verifica se o campo é diferente de númerico
-            if(isNaN(prazo) == true & erro ==''){
+            if(isNaN(document.getElementsByClassName("prazo")[0].value) == true & document.getElementsByTagName('label')[3].innerHTML ==''){
                 var elem = document.createElement('label');
-                elem.innerHTML = "O campo prazo deve conter apenas número.";
                 document.getElementsByClassName('erro')[0].appendChild(elem);
+                elem.innerHTML = "O campo prazo deve conter apenas número.";
                 elem.style.color="red";
                 elem.style.fontSize="0.8rem";
                 elem.style.fontWeight = "400";
+                document.getElementsByClassName("erro")[0].style.height = "3rem";
+                document.getElementsByClassName("prazo")[0].style.marginBottom = "0.7rem";
             }
         }
         document.getElementsByClassName("prazo")[0].addEventListener("blur", validaCampo);
