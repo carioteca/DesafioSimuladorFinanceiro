@@ -21,12 +21,12 @@ Projeto de desenvolvimento front-end de um simulador financeiro.
 
 Formulário Inicial
 
-![This is an image]()
+![This is an image](https://i.ibb.co/v19Tj5x/in-cio.png)
 
 
 Formulário do Resultada da Simulação
 
-![This is an image](https://i.ibb.co/v19Tj5x/in-cio.png)
+![This is an image](https://i.ibb.co/kJrc1YF/1.png)
 
 
 
