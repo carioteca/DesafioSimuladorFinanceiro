@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Importação do jquery e máscara-->
+	<script src="jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="jquery/jquery.maskMoney.min.js" type="text/javascript"></script>
+    <!-- Importação do Google Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;1,100&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <!--Aplicação da máscara para campos aportes e rentabilidade-->
+	<script>
+		jQuery(function() {
+			jQuery(".aporte-inicial, .aporte-mensal").maskMoney({
+				prefix:'R$ ', 
+				thousands:'.', 
+				decimal:','
+			})
+			$(".rentabilidade").maskMoney({
+				suffix:'%',
+				thousands:'.', 
+			
+			})
+		});
+	</script>
+    <!-- Fundo do Formulário -->    
+    <div class="container">
+        <!-- Gráfico e Outros Elementos do Simulador -->
+            <div class="bloco-esquerdo">
+                <!-- Título Simulador -->
+                <h1 div class="titulo-esquerdo">Simulador</h1>
+                <!-- Texto -->
+                <div class="paragrafo">
+                   Qual a melhor aplicação para seu perfil? Faça a Simulação de Investimentos gratuita e receba todas informações.
+                </div>
+                <!-- Imagem do lado esquerdo -->
+                <div class="imagem">
+                </div>
+            </div>
+            <!-- Campos do Simulador de Investimento -->
+            <div class="bloco-direito">
+                <h1 id="titulo-direito">Simulador de Investimento</h1>                     
+                <!-- alinhamento dos campos da esquerda -->
+                    <form name="formulario" method="GET" id="formulario">
+                    <div class="area-campo1">
+                        <div class="campo1">
+                               <label for="rendimento">Rendimento</label>
+                               <!-- alinhamento da área do botões bruto e líquido -->
+                               <div class="area-botao">
+                                    <input type="button" value="Bruto" name="bruto" class="botao-rendimento"/>
+                                    <input type="button" value="Líquido" name="liquído" class="botao-rendimento"/> 
+                               </div>
+                               <label for="indexacao">Aporte Inicial</label>
+                               <input type="text" name="aporte-inicial"  class="aporte-inicial" placeholder="R$0.00"/>  
+                               <label for="prazo">Prazo (em meses)</label>
+                               <input type="text"name="prazo" class="prazo" onblur="validaCampo()"> 
+                               <label class="erro"></label>
+                               <label for="ipca">IPCA (ao ano)</label>
+                               <input type="text" name="ipca" value="{{ipca}}" readonly/> 
+                               <input type="reset" value="Limpar Campos" name="limpar"  class ="acoes1">
+                         </div>                
+                    </div>
+                    <div class="area-campo2">
+                        <div class="campo2">   
+                            <label for="indexação">Tipo de indexação</label>
+                            <!-- Alinhamento da área botões prés,pos,fixado -->
+                            <div class="area-botao2">
+                                <input type="button" value="Pré" name="pre" class="botao-indexacao"/>
+                                <input type="button" value="Pós" name="pos" class="botao-indexacao"/>
+                                <input type="button" value="Fixado" name="fixado" class="botao-indexacao"/>  
+                            </div>     
+                            <label for="aporte-mensal">Aporte mensal</label>
+                            <input type="text" name="aporte-inicial" class="aporte-mensal"  placeholder="R$0.00" />  
+                            <label for="rentabilidade">Rentabilidade</label>
+                            <input type="text"name="rentabilidade" class="rentabilidade" maxlength="7"> 
+                            <label for="ipca">CDI (ao ano)</label>
+                            <input type="text" name="cdi" value="{{cdi}}"readonly/>    
+                            <button type="submit" name="enviar" class="acoes2" onclick="mudarAcao()" >Simular</button>
+                            
+                      </div>  
+                    </div>
+                </div>
+                </form>
+             </div>    
+   <script> 
+       
+       //Função Validar o campo prazo
+       var prazo = document.getElementsByClassName("prazo")[0].value;
+       var erro = document.getElementsByTagName('label')[3].innerHTML
+        function validaCampo(){
+            //Verifica se o campo é diferente de númerico
+            if(isNaN(prazo) == true & erro ==''){
+                var elem = document.createElement('label');
+                elem.innerHTML = "O campo prazo deve conter apenas número.";
+                document.getElementsByClassName('erro')[0].appendChild(elQem);
+                elem.style.color="red";
+                elem.style.fontSize="0.8rem";
+                elem.style.fontWeight = "400";
+            }
+        }
+        document.getElementsByClassName("prazo")[0].addEventListener("blur", validaCampo);
+            
+        // Função do botão rendimento
+        var rend = document.getElementsByClassName("botao-rendimento");
+
+        //Seleciona os botões liquido e bruto
+        var bruto = rend[0];
+        var liquido = rend[1];
+
+        //Aplica o Estilo
+        function mudarEstiloBruto() {
+            bruto.style.background = "#420707";
+            bruto.style.color = "white";
+        }
+        function mudarEstiloLiquido() {
+            liquido.style.background = "#420707";
+            liquido.style.color = "white";
+        }
+
+        //Retira o Estilo
+        function setaEstiloBruto(){
+            bruto.style.background = "#ecececd5";
+            bruto.style.color = "black";
+        }
+        function setaEstiloLiquido(){
+            liquido.style.background = "#ecececd5";
+            liquido.style.color = "black";
+        }
+
+        //Evento ao clicar
+        bruto.addEventListener("click",() => {    
+            mudarEstiloBruto();
+            setaEstiloLiquido();
+            valorRend = "bruto"
+        });
+        liquido.addEventListener("click",() => {    
+            mudarEstiloLiquido();
+            setaEstiloBruto(); 
+            valorRend = "liquido";
+        });
+
+
+        //Função do botão tipo de indexação
+        var ind = document.getElementsByClassName("botao-indexacao");
+
+        //Seleciona os botões liquido e bruto
+        var pre = ind[0];
+        var pos = ind[1];
+        var fixado = ind[2];
+
+
+        //Aplica o Estilo
+        function mudarEstiloPre() {
+            pre.style.background = "#420707";
+            pre.style.color = "white";
+        }
+        function mudarEstiloPos() {
+            pos.style.background = "#420707";
+            pos.style.color = "white";
+        }
+        function mudarEstiloFixado() {
+            fixado.style.background = "#420707";
+            fixado.style.color = "white";
+        }
+
+        //Retira o Estilo
+        function setaEstiloPre(){
+            pre.style.background = "#ecececd5";
+            pre.style.color = "black";
+        }
+        function setaEstiloPos(){
+            pos.style.background = "#ecececd5";
+            pos.style.color = "black";
+        }
+        function setaEstiloFixado(){
+            fixado.style.background = "#ecececd5";
+            fixado.style.color = "black";
+        }
+
+
+
+        //Evento ao clicar
+        pre.addEventListener("click",() => {    
+            mudarEstiloPre();
+            setaEstiloPos();
+            setaEstiloFixado();
+            valorInd = "pre";
+        });
+        pos.addEventListener("click",() => {    
+            mudarEstiloPos();
+            setaEstiloPre();
+            setaEstiloFixado(); 
+            valorInd = "pos";
+        });
+        fixado.addEventListener("click",() => {    
+            mudarEstiloFixado();
+            setaEstiloPos();
+            setaEstiloPre();
+            valorInd = "fixado";
+        });
+        function mudarAcao(){
+            paraInd = '/'+valorInd +'/';
+            paraRend = '/'+valorRend;
+            document.formulario.action = '/simular'+ paraRend + paraInd;
+            document.formulario.submit();           
+        }
+
+      
+    </script>    
+
+    </div>
+</body>
+</html>

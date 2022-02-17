@@ -1,0 +1,201 @@
+*{  
+    height:100%;
+    margin:0;
+    padding:0;
+    border:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+     text-rendering: optimizeLegibility;	
+
+}
+/* Cor de fundo */
+body{
+    background-image: linear-gradient(to bottom, #589aeb, rgb(22, 20, 20));
+    width: 100vw;
+    height: 100vh;
+}
+
+/*Alinhamento principal*/
+.container{
+    display: flex;
+    /*alinhamento vertical*/
+    justify-content: center;
+    /*alinhamento horizontal*/
+    align-items:center;
+}
+
+/*bloco esquerdo*/
+.container .bloco-esquerdo{
+    width:24rem;
+    height:34rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #330d70;
+    border-radius: 2rem 0rem 0rem 2rem;
+    box-shadow: 0px 3px 2px 2px rgba(0, 0, 0, 0.2);
+    
+}
+
+/* Investimento */
+.container .bloco-esquerdo .titulo-esquerdo{
+    font-weight: 400;
+    color:white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+
+}
+/* Título de Porque Simular o Investimento? */
+.container .bloco-esquerdo .paragrafo{
+    font-weight: 200, lighter;
+    color:white;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-left: 1.5rem;
+
+}
+/* 
+Imagem ao lado esquerdo de porcentagem */
+ .container .bloco-esquerdo .imagem{
+    width:20rem;
+    height:200rem;
+    margin-top:6rem;
+    background: url(../svg/grafico.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+} 
+
+/* Todos os campos do investimento  e títulos*/
+.bloco-direito{
+    background-color:#ececece8;
+    width:34.4rem;
+    height:34rem;
+    display: flex;
+    border-radius:0rem 2rem 2rem 0rem;
+    box-shadow: 0px 3px 2px 2px rgba(0, 0, 0, 0.2);
+
+ }
+ form{
+    display: flex;
+    margin-top: 3rem;
+}
+
+ 
+/*Título Simulador de Investimento */
+.container .bloco-direito #titulo-direito{
+    font-weight: 400;
+    color:white;
+    font-size: 1.5rem;
+    text-align: center;
+    position: absolute;
+    padding-top:0.3rem;
+    background-color:#2f0c68;
+    width:34.4rem;
+    height:3.2rem;
+    border-radius:0rem 2rem 0rem 0rem;
+
+}
+/* Area do campo esquerdo */
+.container .bloco-direito .area-campo1, .campo2{
+    display: flex;
+    margin-top:  2rem;
+    margin-left: 2rem;
+
+}
+.container .bloco-direito .area-campo1 .campo1, .campo2{
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    height: 28rem;
+}
+/* Título dos campos  */
+ label{
+    font-weight: 500;
+    color:black;
+    font-size: 1rem;
+}
+/* Área de botão de rendimento */
+.area-botao, .area-botao2{
+    margin-bottom: 1rem;
+}
+
+/* Campos do formulários */
+input[type=text]{
+    font-weight: 200;
+    text-align:center;
+    font-size: 1rem;
+    height: 5rem;
+    width: 9rem;
+    margin-bottom: 2.3rem;
+    background-color:#ffff;
+    border-radius: 2px 2px 2px 2px;
+}
+
+/* Botão de rendimento  e tipo indexação*/
+ input[type=button]{
+    font-weight: 300;
+    font-size: 1rem;
+    background-color: #ecececd5;
+    color:black;
+    text-align:center;
+    border-width: 2px;
+    border-width:2px;
+    border-style:solid;
+    border-radius: 3px 4px 3px 3px;
+    border-color: #420707;
+}
+.botao-rendimento{
+    margin-right: -0.4rem;
+    width:5rem;
+    height:2rem;
+}
+.botao-indexacao{
+    margin-right: -0.4rem;
+    width:5rem;
+    height:2rem;
+}
+/* Botão de reset e simular */
+.acoes1, .acoes2{
+   font-size:0.rem;
+   font-weight: 100, bold;
+   border-radius:7px;
+   border-radius: 4px 4px 4px 4px;
+}
+/* Botão reset */
+.acoes1{
+    width: 9.2rem;
+    background-color: rgb(92, 92, 92);
+    color: white;
+}
+/* Botão simular */
+.acoes2{
+    width: 9.2rem;
+    background-color:#30A41D;
+    color: white;
+}
+
+/* Quando mouse está em cima */
+input[type=button]:hover{
+    background-color: #420707;
+    color:white;
+}
+
+
+/* Bloco segundo dos campos -----------------------------------------------------*/
+.container .bloco-direito .area-campo2 .campo2{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 28rem;
+
+}
+
+.erro{
+    height: 0%;
+}

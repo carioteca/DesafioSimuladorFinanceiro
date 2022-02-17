@@ -1,0 +1,229 @@
+*{  
+    height:100%;
+    margin:0;
+    padding:0;
+    border:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-size-adjust: none;
+    -webkit-font-smoothing: antialiased;
+     text-rendering: optimizeLegibility;	
+
+}
+/* Cor de fundo */
+body{
+    background-image: linear-gradient(to bottom, #589aeb, rgb(22, 20, 20));
+    width: 100vw;
+    height: 100vh;
+}
+
+/*Alinhamento principal*/
+.container{
+    display: flex;
+    /*alinhamento vertical*/
+    justify-content: center;
+    /*alinhamento horizontal*/
+    align-items:center;
+}
+
+/*bloco esquerdo*/
+.container .bloco-esquerdo{
+    width:35rem;
+    height:34rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #330d70;
+    border-radius: 2rem 0rem 0rem 2rem;
+    box-shadow: 0px 3px 2px 2px rgba(0, 0, 0, 0.2);
+
+    
+}
+
+/* Investimento */
+.container .bloco-esquerdo .titulo-esquerdo{
+    font-weight: 400;
+    color:white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    height:20rem;
+
+}
+
+/* Todos os campos do investimento  e títulos*/
+.bloco-direito{
+    background-color:#ececece8;
+    width:34.4rem;
+    height:34rem;
+    display: flex;
+    border-radius:0rem 2rem 2rem 0rem;
+    box-shadow: 0px 3px 2px 2px rgba(0, 0, 0, 0.2);
+
+ }
+ form{
+    display: flex;
+    margin-top: 3rem;
+}
+
+ 
+/*Título Simulador de Investimento */
+.container .bloco-direito #titulo-direito{
+    font-weight: 400;
+    color:white;
+    font-size: 1.5rem;
+    text-align: center;
+    position: absolute;
+    padding-top:0.3rem;
+    background-color:#2f0c68;
+    width:34.4rem;
+    height:3.2rem;
+    border-radius:0rem 2rem 0rem 0rem;
+
+}
+/* Area do campo esquerdo */
+.container .bloco-direito .area-campo1, .campo2{
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 2rem;
+
+}
+.container .bloco-direito .area-campo1 .campo1, .campo2{
+    display: flex;
+    flex-direction: column;
+    width: 14rem;
+    height: 28rem;
+}
+/* Título dos campos  */
+ label{
+    font-weight: 500;
+    color:black;
+    font-size: 1rem;
+}
+/* Área de botão de rendimento */
+.area-botao, .area-botao2{
+    margin-bottom: 1rem;
+}
+
+/* Campos do formulários */
+input[type=text]{
+    font-weight: 200;
+    text-align:center;
+    font-size: 1rem;
+    height: 5rem;
+    width: 9rem;
+    margin-bottom: 2.3rem;
+    background-color:#ffff;
+    border-radius: 2px 2px 2px 2px;
+}
+
+/* Botão de rendimento  e tipo indexação*/
+ input[type=button]{
+    font-weight: 300;
+    font-size: 1rem;
+    background-color: #ecececd5;
+    color:black;
+    text-align:center;
+    border-width: 2px;
+    border-width:2px;
+    border-style:solid;
+    border-radius: 3px 4px 3px 3px;
+    border-color: #420707;
+}
+.botao-rendimento{
+    margin-right: -0.4rem;
+    width:5rem;
+    height:2rem;
+}
+.botao-indexacao{
+    margin-right: -0.4rem;
+    width:5rem;
+    height:2rem;
+}
+/* Botão de reset e simular */
+.acoes1, .acoes2{
+   font-size:0.rem;
+   font-weight: 100, bold;
+   border-radius:7px;
+   border-radius: 4px 4px 4px 4px;
+}
+/* Botão reset */
+.acoes1{
+    width: 9.2rem;
+    background-color: rgb(92, 92, 92);
+    color: white;
+}
+/* Botão simular */
+.acoes2{
+    width: 9.2rem;
+    background-color:#30A41D;
+    color: white;
+}
+
+/* Quando mouse está em cima */
+input[type=button]:hover{
+    background-color: #420707;
+    color:white;
+}
+
+
+/* Bloco segundo dos campos -----------------------------------------------------*/
+.container .bloco-direito .area-campo2 .campo2{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 28rem;
+
+}
+
+.container .bloco-esquerdo .resultado1{
+    display: flex;
+    flex-direction:row;
+    justify-content:center;
+    align-content:center;
+    align-content:space-between;
+    gap:1rem;
+    width: 35rem;
+    height: 24rem;
+
+}
+.container .bloco-esquerdo .resultado2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-content: space-between;
+    gap:1rem;
+    width:35rem;
+    
+}
+/*Fundo do resultado*/
+.item1, .item2, .item3, .item4,.item5,.item6{
+    background-color: #e7e4fc;
+    border-radius: 4px 4px 4px 4px;
+    width:10rem;
+    height:4rem;
+    text-align: center;
+
+
+}
+/* Títulos do resultado */
+.titulo-resultado{
+    font-weight: 400;
+} 
+
+/*Título com configuraçõa diferente*/
+.valortotalinvestido {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/*Valor do resultado*/
+.val{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color:rgb(0, 0, 0);
+
+}
+
